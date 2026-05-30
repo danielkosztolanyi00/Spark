@@ -47,11 +47,19 @@ export default function Contact({ prefill }: ContactProps) {
 
   async function onSubmit(data: FormValues) {
     setLoading(true);
-    // TODO: wire up email backend (Resend, Formspree, etc.)
-    await new Promise((r) => setTimeout(r, 1200));
-    console.log("Form submitted:", data);
-    setSubmitted(true);
-    setLoading(false);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error("Failed");
+      setSubmitted(true);
+    } catch {
+      alert("Something went wrong — please email me directly at daniel.kosztolanyi00@gmail.com");
+    } finally {
+      setLoading(false);
+    }
   }
 
   if (submitted) {
