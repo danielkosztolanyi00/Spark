@@ -17,10 +17,19 @@ const projects = [
     placeholder: false,
   },
   {
-    title: "Coming soon",
-    description: "More projects launching shortly.",
-    tags: ["React", "TypeScript"],
-    placeholder: true,
+    title: "Erzsébet · Matematika",
+    description:
+      "Meleg, játékos weboldal egy szegedi matematikatanárnak. Egyedi „Találd meg a hibát!\" interaktív feladványokkal, érettségi- és versenyfelkészítéssel, jelentkezési űrlappal.",
+    tags: ["Next.js", "TypeScript", "Tailwind", "Interaktív"],
+    href: "https://erzsebet-matek.danielkosztolanyi.com",
+    thumbnail: {
+      bg: "linear-gradient(135deg, #3b2f2a 0%, #2b2320 100%)",
+      accent: "#d2603a",
+      icon: "√",
+      label: "Erzsébet · Matematika",
+      sub: "Szeged · 30+ év",
+    },
+    placeholder: false,
   },
   {
     title: "Coming soon",
